@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <select id="slt">  
+            <option value="doctor" id="doctor">Google</option> 
+            <option value="user" id="user">Yahoo</option> 
+            <option value="admin" id="admin">Admin</option> 
+        </select> 
+        <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+
+let slt = document.getElementById("slt")
+
+let doctor = document.getElementById("doctor")
+let user = document.getElementById("user")
+let admin = document.getElementById("admin")
+
+let form = document.getElementById("form")
+form.addEventListener("submit",function(event){
+    event.preventDefault(event)
+    if(slt.value === "doctor"){
+      window.location.href="./star.html"
+    }else if(slt.value === "user"){
+        window.location.href="./calendar.html"
+    }else{
+        window.location.href="./select-function.html"
+    }
+});
+   
+</script>
+</html>

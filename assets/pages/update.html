@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../styles/update.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--<title>Responsive Regisration Form </title>--> 
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>ADD IMAGE</label>
+                            <input type="text" id="pet_img">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Real Name : </label>
+                            <input type="text" id="pet_name_alt">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Personal Name</label>
+                            <input type="text" id="pet_personal_name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>DOB of the pet</label>
+                            <input type="text" id="dob_pet">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Special talent</label>
+                            <input type="text" id="special_talent">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Behavior</label>
+                            <input type="text" id="behavior">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Character</label>
+                            <input type="text" id="character">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pets price</label>
+                            <input type="text" id="pet_price">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contact</label>
+                            <input type="text" id="seller_contact">
+                        </div>
+
+                        
+                    </div>
+                    <div class="buttons">
+                    <button class="nextBtn" id="edit">
+                        <span class="btnText">Edit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                    <button class="nextBtn" id="dlt">
+                        <span class="btnText">Delete</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+                </div> 
+            </div>
+
+            
+
+            </div>
+        </form>
+    </div>
+
+    <!--<script src="script.js"></script>-->
+    <script>
+        const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        backBtn = form.querySelector(".backBtn"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.value != ""){
+            form.classList.add('secActive');
+        }else{
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+// backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+let detail = JSON.parse(localStorage.getItem("new_card"));
+
+let urlparams = new URLSearchParams(window.location.search);
+let thisid = urlparams.get('id');
+let thispet = JSON.parse(localStorage.getItem("new_card")).find((e) => e.id == thisid);
+
+
+      let pet_img = document.getElementById("pet_img").value = thispet[pet_img];
+      let pet_name_alt = document.getElementById("pet_name_alt").value;
+      let personal_name = document.getElementById("pet_personal_name").value;
+      let dob_pet = document.getElementById("dob_pet").value;
+      let special_talent = document.getElementById("special_talent").value;
+      let behavior = document.getElementById("behavior").value;
+      let character = document.getElementById("character").value;
+      let pet_price = document.getElementById("pet_price").value;
+      let contact = document.getElementById("seller_contact").value;
+      
+
+
+    form.addEventListener("submit",function(event){
+
+      let pet_img = document.getElementById("pet_img").value;
+      let pet_name_alt = document.getElementById("pet_name_alt").value;
+      let personal_name = document.getElementById("pet_personal_name").value;
+      let dob_pet = document.getElementById("dob_pet").value;
+      let special_talent = document.getElementById("special_talent").value;
+      let behavior = document.getElementById("behavior").value;
+      let character = document.getElementById("character").value;
+      let pet_price = document.getElementById("pet_price").value;
+      let contact = document.getElementById("seller_contact").value; 
+
+    let edited_details = {pet_img,pet_name_alt,personal_name,dob_pet,special_talent,behavior,character,pet_price,contact}
+
+    
+    if(email_check != Emailaddress){
+      alert("You can't change the email")
+    }else{
+      let combine = Object.assign(user_profile,edited_details);
+
+    let userindex = details.indexOf(user_profile)
+    details[userindex] = combine;
+
+    window.localStorage.setItem("userdata",JSON.stringify(details))
+
+    // window.localStorage.setItem("updated_user_details",JSON.stringify(details))
+    alert("Successfully updated your profile")
+    } 
+    });
+
+let deletes =document.getElementById("dlt")
+
+deletes.addEventListener("click", function (event){
+ event.preventDefault();
+
+ let index = details.indexOf(user_profile);
+ let failed = confirm("Cofirm to delete this");
+ if(failed !== true){
+  return;
+ }else{
+  details.splice(index, 1);
+  localStorage.setItem("userdata", JSON.stringify(details));
+  window.location.href = "./home-page.html"
+ }
+
+});
+
+
+
+
+    </script>
+</body>
+</html>

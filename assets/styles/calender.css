@@ -1,0 +1,118 @@
+body{
+    background-color:  rgb(245, 245, 245);
+}
+.logo-and-heading{
+    display: flex;
+    flex-direction:row;
+    margin:10px;
+}
+.types-of-course,.second-line-branch{
+    font-size: 10px;
+}
+.second-line-branch{
+    margin-left:180px;
+}
+.dhanalakshmi{
+    font-size:40px;
+    margin: 0%;
+    margin-left: 120px;
+}
+.month-year{
+    display: flex;
+    flex-direction:row;
+    text-align: center;
+}
+.total-calender{
+    background-color: rgb(255, 191, 0);
+    width:805px;
+    height: auto;
+    padding: 70px;
+
+}
+.month,.month-in-tamil{
+font-size:45px;
+margin:0px 75px;
+}
+.month{
+    margin-top: 130px;
+    margin-left: 0px;
+}
+.month-in-tamil{
+margin-top: 120px;
+}
+.year{
+    font-size:100px;
+    margin: 0px;
+}
+.year-in-tamil{
+    font-size: 12.948px;
+}
+.day{
+    display: flex;
+    flex-direction: row;
+}
+.days{
+    display: flex;
+    flex-direction: column;
+}
+.days-in-enghlish,.days-in-tamizh{
+    text-align:center;
+    width: 113px;
+    margin-right: 5px;
+    background-color: navy;
+    color:white;
+}
+.days-in-enghlish{
+padding-top: 10px;
+}
+.days-in-tamizh{
+padding-bottom: 10px;
+}
+.days-in-english,.days-in-tamil{
+    text-align:center;
+    width: 113px;
+    background-color: white;
+}
+.days-in-english{
+padding-top: 10px;
+}
+.days-in-tamil{
+    padding-bottom: 10px;
+}
+.column-date{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.row-date{
+    display: flex;
+    flex-direction: row;
+}
+.sunday{
+    width: 112px;
+    height: 112px;
+    color:rgb(255, 191, 0);
+    background-color: navy;
+    border-top:2px solid rgb(255, 191, 0);
+    border-right: 2px solid navy;
+}
+.date{
+    width:112px;
+    height: 112px;
+    color:navy;
+    background-color: transparent;
+    border-top:2px solid navy;
+    border-right: 2px solid navy;
+}
+.big-date{
+    padding-top:30px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.tamil-date{
+    padding-top:5px;
+    padding-right: 5px;
+    text-align:right;
+    align-self: end;
+}
